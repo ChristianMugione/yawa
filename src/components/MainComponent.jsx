@@ -19,14 +19,14 @@ export const MainComponent = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const weatherDataJson = loadFromLS();
-    if (!weatherDataJson) {
-      return;
-    }
+  // useEffect(() => {
+  //   const weatherDataJson = loadFromLS();
+  //   if (!weatherDataJson) {
+  //     return;
+  //   }
 
-    // dispatch(addCityToShow(weatherDataJson));
-  }, []);
+  //   // dispatch(addCityToShow(weatherDataJson));
+  // }, []);
 
   useEffect(() => {
     //When selectedCity changes, i read API to get new weather data
@@ -34,6 +34,7 @@ export const MainComponent = () => {
       //If no data
       return;
     }
+
     const fetchWeatherData = async (lat, lon, api_key) => {
       const weatherData = await getWeatherFromCoords(lat, lon, api_key);
       let weatherDataJson = await weatherData.json();

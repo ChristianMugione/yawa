@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "../assets/ForecastStyles.css";
-import { getForecastFromCoords } from "../auxFunctions/getForecastFromCoords";
 import { useSelector } from "react-redux";
 import { ForecastCard } from "./ForecastCard";
 
@@ -8,7 +7,7 @@ export const Forecast = () => {
   //Take data from store (Redux)
   const cityToShow = useSelector((state) => state.appStatus.cityToShow);
   const [dataFromCity, setDataFromCity] = useState([]);
-  let [counter, setCounter] = useState(0);
+  let counter = 0;
 
   useEffect(() => {
     setDataFromCity(
@@ -27,7 +26,7 @@ export const Forecast = () => {
     <>
       <section className="forecast">
         {dataFromCity.map((item) => {
-          setCounter(counter++);
+          counter++;
           return (
             <ForecastCard
               key={counter}

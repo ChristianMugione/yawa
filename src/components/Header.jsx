@@ -1,14 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getCityList } from "../auxFunctions/getCityList";
 import { useDispatch } from "react-redux";
-import { addCitiesToSelect } from "../store/appSlices";
+import { addCitiesToSelect, addSelectedCity } from "../store/appSlices";
 import { CitiesToSelect } from "./CitiesToSelect";
 import "../assets/HeaderStyles.css";
+import { loadFromLS } from "../auxFunctions/localStorageFncs";
 
 export const Header = () => {
   const [input, setInput] = useState("");
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const weatherDataJson = loadFromLS();
+    if (weatherDataJson) {
+      dispatch(
+        addSelectedCity({
+          lat: weatherDataJson.coord.lat,
+          lon: weatherDataJson.coord.lon,
+        })
+      );
+    }
+  }, []);
 
   const handleForm = (e) => {
     e.preventDefault();
