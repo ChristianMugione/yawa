@@ -1,0 +1,58 @@
+.header {
+  /* background-color: lightblue; */
+  position: relative;
+  padding: 8px;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  /* box-shadow: 1px 1px 5px 1px gray; */
+  gap: 6px;
+  text-align: center;
+  margin: 4px;
+}
+
+h1 {
+  color: #fafafa80;
+}
+
+.search-form {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 5px 1px white;
+  /* border: 1px solid white; */
+}
+
+.input-form {
+  font-size: 1.1em;
+  width: 75%;
+  border: none;
+  padding-left: 4px;
+}
+
+.search-button {
+  font-size: 1.1em;
+  width: 25%;
+  border: none;
+  background-color: gray;
+  color: aliceblue;
+}
+
+.cities {
+  position: absolute;
+  top: 125px;
+  background-color: aliceblue;
+  padding: 8px;
+  width: 80%;
+  border-radius: 8px;
+}
+
+.cities li {
+  cursor: pointer;
+}
+
+.cities li:hover {
+  background-color: lightgray;
+}

@@ -1,0 +1,34 @@
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.temp {
+  display: flex;
+}
+
+.temp-number {
+  font-size: 4em;
+}
+
+.temp-symbol {
+  font-size: 3em;
+}
+
+@media (min-width: 768px) {
+  .weather-info,
+  .city-name,
+  .weather-description {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 992px) {
+  .weather-info,
+  .city-name,
+  .weather-description {
+    font-size: 1.1em;
+  }
+}

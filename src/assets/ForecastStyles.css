@@ -1,0 +1,44 @@
+.forecast {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 20px;
+  margin: 4px;
+}
+
+img {
+  width: 80px;
+}
+
+.forecast-card {
+  width: auto;
+  background-color: lightgray;
+  padding: 8px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px 1px gray;
+}
+
+@media (min-width: 768px) {
+  img {
+    width: unset;
+  }
+
+  .forecast-card {
+    width: 30%;
+    aspect-ratio: 1/1.5;
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 992px) {
+  .forecast-card {
+    width: 30%;
+    aspect-ratio: 1/1;
+    font-size: 1.2em;
+  }
+}

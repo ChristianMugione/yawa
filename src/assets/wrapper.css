@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(45deg, #805bca, #8180f3);
+}
+
+.container {
+  background: linear-gradient(to bottom, #993aab, #18203d);
+  min-height: 90vh;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    min-width: 720px;
+  }
+}
