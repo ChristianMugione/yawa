@@ -1,3 +1,7 @@
+/*
+ * This component show the section that have the three days forecast for the selected city.
+ */
+
 import { useEffect, useState } from "react";
 import "../assets/ForecastStyles.css";
 import { useSelector } from "react-redux";

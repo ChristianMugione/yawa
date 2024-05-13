@@ -17,7 +17,7 @@ export const CitiesToSelect = () => {
 
   return (
     <>
-      {citiesToSelect && (
+      {citiesToSelect && ( //Display component only when is necesary
         <ul className="cities">
           {citiesToSelect.map((city, index) => {
             return (
@@ -25,8 +25,9 @@ export const CitiesToSelect = () => {
                 key={index}
                 className="each-city"
                 onClick={() => {
-                  //dispatch selectedcity
+                  //When user click the city the component dispatch the coords to store...
                   dispatch(addSelectedCity({ lat: city.lat, lon: city.lon }));
+                  //... and reset the list of cities for hide this component.
                   dispatch(resetCitiesToSelect());
                 }}
               >
