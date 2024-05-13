@@ -11,8 +11,9 @@ export const Forecast = () => {
   //Take data from store (Redux)
   const cityToShow = useSelector((state) => state.appStatus.cityToShow);
   const [dataFromCity, setDataFromCity] = useState([]);
-  let counter = 0;
 
+  //When slice with city info is updated then take forecast of first three days (with slice(0,3)) and put it in useState dataFromCity
+  //The component will render these info in three cards
   useEffect(() => {
     setDataFromCity(
       cityToShow.forecast.list.slice(0, 3).map((item) => ({
@@ -22,26 +23,21 @@ export const Forecast = () => {
         description: item.weather[0].main,
       }))
     );
-    console.log("cityToShow: ", cityToShow);
-    console.log("dataFromCity: ", dataFromCity);
   }, [cityToShow]);
 
   return (
-    <>
-      <section className="forecast">
-        {dataFromCity.map((item) => {
-          counter++;
-          return (
-            <ForecastCard
-              key={counter}
-              icon={item.icon}
-              min={item.min}
-              max={item.max}
-              description={item.description}
-            />
-          );
-        })}
-      </section>
-    </>
+    <section className="forecast">
+      {dataFromCity.map((item, index) => {
+        return (
+          <ForecastCard
+            key={index}
+            icon={item.icon}
+            min={item.min}
+            max={item.max}
+            description={item.description}
+          />
+        );
+      })}
+    </section>
   );
 };
