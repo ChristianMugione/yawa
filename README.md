@@ -1,8 +1,31 @@
-# React + Vite
+# YAWA - Yet Another Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+YAWA (Yet Another Weather App) is a sleek and user-friendly application designed to provide accurate weather information for cities worldwide. With YAWA, users can easily check current weather conditions, forecasts, and more, all in one intuitive platform.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **City Search:** Search for weather information by entering city names.
+- **Forecast:** Get forecasts for the three upcoming days to plan ahead.
+
+## Technologies Used
+
+- React.js
+- Redux/Toolkit
+- React-router-dom
+- OpenWeatherMap API
+- Vite
+- Vitest
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+Special thanks to the developers of the libraries and APIs used in this project.

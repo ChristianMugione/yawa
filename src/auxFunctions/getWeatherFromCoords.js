@@ -1,3 +1,7 @@
+/**
+ * This function retrieve current weather data using coords lat and lon.
+ */
+
 export const getWeatherFromCoords = async (lat, lon, api_key) => {
   try {
     const res = await fetch(

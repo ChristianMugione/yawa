@@ -1,3 +1,7 @@
+/**
+ * This function retrieve forecast data using coords lat and lon.
+ */
+
 export const getForecastFromCoords = async (lat, lon, api_key) => {
   try {
     const res = await fetch(
