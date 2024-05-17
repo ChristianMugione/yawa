@@ -1,4 +1,5 @@
-import { saveToLS, loadFromLS } from "./tuArchivo";
+import { beforeEach, describe, expect, test } from "vitest";
+import { saveToLS, loadFromLS } from "./localStorageFncs";
 
 describe("LocalStorage functions", () => {
   // Mock localStorage

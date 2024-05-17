@@ -7,5 +7,8 @@ export const saveToLS = (info, localStorage = window.localStorage) => {
 export const loadFromLS = (localStorage = window.localStorage) => {
   // Function for retrieve info from browser local storage and retrieve it parsed
   const infoStringified = localStorage.getItem("weather-info");
+  if (!infoStringified) {
+    return null;
+  }
   return JSON.parse(infoStringified);
 };
