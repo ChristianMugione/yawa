@@ -1,6 +1,6 @@
 import { Provider } from "react-redux";
 import "./App.css";
-import { AppWrapper } from "./appWrapper";
+import { AppWrapper } from "./AppWrapper";
 import store from "./store/store";
 import { Header } from "./components/Header";
 import { Route, Routes } from "react-router-dom";
