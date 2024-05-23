@@ -19,17 +19,32 @@ h1 {
 }
 
 .search-form {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 5px 1px white;
-  /* border: 1px solid white; */
+  position: relative;
+}
+
+.search-form svg {
+  position: absolute;
+  color: #000000;
+  top: 10px;
+  left: 10px;
 }
 
 .input-form {
   font-size: 1.1em;
-  width: 75%;
-  border: none;
-  padding-left: 4px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2.5rem;
+  background-color: #1f2937;
+  color: lightgray;
+  outline: none;
+}
+
+.input-form:focus {
+  border: 1px solid white;
 }
 
 .search-button {
@@ -43,7 +58,7 @@ h1 {
 .cities {
   position: absolute;
   top: 125px;
-  background-color: aliceblue;
+  background-color: #1f2937;
   padding: 8px;
   width: 80%;
   border-radius: 8px;
@@ -54,5 +69,5 @@ h1 {
 }
 
 .cities li:hover {
-  background-color: lightgray;
+  background-color: #00000080;
 }

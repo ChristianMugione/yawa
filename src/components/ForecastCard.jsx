@@ -1,16 +1,37 @@
 import { oneDecimal } from "../auxFunctions/oneDecimal";
+import { ShowIcon } from "./ShowIcon";
 
-export const ForecastCard = ({ icon, min, max, description }) => {
-  const imgUrl = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+export const ForecastCard = ({
+  weekDay,
+  dayNumber,
+  icon,
+  min,
+  max,
+  description,
+}) => {
+  const weekDayName = {
+    0: "Sunday",
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
+  };
   return (
     <div className="forecast-card">
-      <img src={imgUrl} alt="Weather conditions forecast" />
+      <h5>
+        {weekDayName[weekDay]} {dayNumber}
+      </h5>
+      <div className="forecast-card-icon">
+        <ShowIcon iconCode={icon + "d"} />
+      </div>
       <div className="min-max">
         <p>
-          {oneDecimal(min)}/{oneDecimal(max)}
+          {oneDecimal(min)}º/{oneDecimal(max)}º
         </p>
-        <p>{description}</p>
       </div>
+      <p className="description">{description}</p>
     </div>
   );
 };

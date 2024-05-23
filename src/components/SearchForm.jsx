@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getCityList } from "../auxFunctions/getCityList";
 import { addCitiesToSelect } from "../store/appSlices";
+import { BsEyeglasses, BsSearch } from "react-icons/bs";
 
 export const SearchForm = () => {
   const [input, setInput] = useState("");
@@ -33,15 +34,16 @@ export const SearchForm = () => {
       id="search-form"
       onSubmit={handleForm}
     >
+      <BsSearch />
       <input
         type="text"
         name="city"
-        placeholder="Enter city"
+        placeholder="Search weather..."
         className="input-form"
         value={input}
         onChange={handleChange}
       />
-      <button className="search-button">Search</button>
+      {/* <button className="search-button">Search</button> */}
     </form>
   );
 };

@@ -7,7 +7,11 @@
  */
 
 import { useDispatch, useSelector } from "react-redux";
-import { addSelectedCity, resetCitiesToSelect } from "../store/appSlices";
+import {
+  addSelectedCity,
+  emptyCityToShow,
+  resetCitiesToSelect,
+} from "../store/appSlices";
 
 export const CitiesToSelect = () => {
   //Take the list of cities from de Redux store.
@@ -29,6 +33,8 @@ export const CitiesToSelect = () => {
                   dispatch(addSelectedCity({ lat: city.lat, lon: city.lon }));
                   //... and reset the list of cities for hide this component.
                   dispatch(resetCitiesToSelect());
+                  //also reset old city info
+                  dispatch(emptyCityToShow());
                 }}
               >
                 {city.name}, {city.country}

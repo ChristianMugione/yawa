@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import "../assets/ForecastStyles.css";
 import { useSelector } from "react-redux";
 import { ForecastCard } from "./ForecastCard";
+import { calcThreeDaysForecast } from "../auxFunctions/calcThreeDaysForecast";
 
 export const Forecast = () => {
   //Take data from store (Redux)
@@ -15,14 +16,17 @@ export const Forecast = () => {
   //When slice with city info is updated then take forecast of first three days (with slice(0,3)) and put it in useState dataFromCity
   //The component will render these info in three cards
   useEffect(() => {
-    setDataFromCity(
-      cityToShow.forecast.list.slice(0, 3).map((item) => ({
-        icon: item.weather[0].icon,
-        min: item.main.temp_min,
-        max: item.main.temp_max,
-        description: item.weather[0].main,
-      }))
-    );
+    const threeDaysForecast = calcThreeDaysForecast(cityToShow.forecast.list);
+    console.log(threeDaysForecast);
+    setDataFromCity(threeDaysForecast);
+    // setDataFromCity(
+    //   cityToShow.forecast.list.slice(0, 3).map((item) => ({
+    //     icon: item.weather[0].icon,
+    //     min: item.main.temp_min,
+    //     max: item.main.temp_max,
+    //     description: item.weather[0].main,
+    //   }))
+    // );
   }, [cityToShow]);
 
   return (
@@ -31,10 +35,12 @@ export const Forecast = () => {
         return (
           <ForecastCard
             key={index}
-            icon={item.icon}
-            min={item.min}
-            max={item.max}
-            description={item.description}
+            weekDay={item.weekDay}
+            dayNumber={item.dayNumber}
+            icon={item.dayForecast.icon}
+            min={item.dayForecast.min}
+            max={item.dayForecast.max}
+            description={item.dayForecast.description}
           />
         );
       })}

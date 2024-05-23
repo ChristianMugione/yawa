@@ -24,6 +24,9 @@ export const appSlice = createSlice({
     addCityToShow: (state, action) => {
       state.cityToShow = action.payload;
     },
+    emptyCityToShow: (state) => {
+      state.cityToShow = null;
+    },
   },
 });
 
@@ -32,4 +35,5 @@ export const {
   addSelectedCity,
   resetCitiesToSelect,
   addCityToShow,
+  emptyCityToShow,
 } = appSlice.actions;

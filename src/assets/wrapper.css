@@ -11,15 +11,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: linear-gradient(45deg, #805bca, #8180f3);
+  background: #030712;
 }
 
 .container {
-  background: linear-gradient(to bottom, #993aab, #18203d);
+  background: #030712;
   min-height: 90vh;
   border-radius: 12px;
+  color: #f9fafb;
 }
 
+@media (min-width: 320px) {
+  .container {
+    min-width: 310px;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    min-width: 570px;
+  }
+}
 @media (min-width: 768px) {
   .container {
     min-width: 720px;

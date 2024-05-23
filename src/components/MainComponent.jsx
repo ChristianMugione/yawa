@@ -12,9 +12,10 @@ import { addCityToShow } from "../store/appSlices";
 import { Forecast } from "./Forecast";
 import { getForecastFromCoords } from "../auxFunctions/getForecastFromCoords";
 import { saveToLS } from "../auxFunctions/localStorageFncs";
+import { ShowIcon } from "./ShowIcon";
 
 export const MainComponent = () => {
-  const [icon, setIcon] = useState("");
+  const [iconCode, setIconCode] = useState("");
 
   //selectedCity contain coords of the city selected to show
   const selectedCity = useSelector((state) => state.appStatus.selectedCity);
@@ -45,11 +46,7 @@ export const MainComponent = () => {
       //save info to store
       dispatch(addCityToShow(weatherDataJson));
 
-      const imgUrl =
-        "https://openweathermap.org/img/wn/" +
-        weatherDataJson.weather[0].icon +
-        "@2x.png";
-      setIcon(imgUrl);
+      setIconCode(weatherDataJson.weather[0].icon);
     };
 
     fetchWeatherData(
@@ -61,10 +58,12 @@ export const MainComponent = () => {
 
   return (
     <section className="weather-info">
+      {!cityToShow && <h2>Loading...</h2>}
       {cityToShow && (
         <>
           <div className="temp">
-            <img src={icon} alt="" />
+            {/* <img src={icon} alt="" /> */}
+            <ShowIcon iconCode={iconCode} />
             <p className="temp-number">
               {Math.round(cityToShow.main.temp * 10) / 10}
             </p>
