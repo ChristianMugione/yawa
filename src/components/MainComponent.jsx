@@ -58,7 +58,8 @@ export const MainComponent = () => {
 
   return (
     <section className="weather-info">
-      {!cityToShow && <h2>Loading...</h2>}
+      {!cityToShow && selectedCity.lan && <h2>Loading...</h2>}
+      {!cityToShow && !selectedCity.lan && <h2>Waiting input...</h2>}
       {cityToShow && (
         <>
           <div className="temp">
