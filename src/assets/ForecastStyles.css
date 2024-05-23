@@ -10,8 +10,8 @@
 
 .forecast-card {
   background-color: #1f2937;
-  padding: 8px;
-  padding-bottom: 20px;
+  padding: 20px 8px;
+  /* padding-bottom: 20px; */
   display: flex;
   /* width: 100%; */
   flex-direction: column;
@@ -19,11 +19,25 @@
   border-radius: 8px;
   /* font-size: 1.5em; */
   color: #f9fafb;
+  gap: 6px;
 }
 
 .forecast-card-icon {
   color: #000000;
   font-size: 2.5em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast-card-icon::after {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  top: 1em;
+  background: radial-gradient(#00000055, #00000000);
+  border-radius: 50%;
+  content: "";
 }
 
 @media (min-width: 768px) {

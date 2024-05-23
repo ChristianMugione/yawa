@@ -17,16 +17,7 @@ export const Forecast = () => {
   //The component will render these info in three cards
   useEffect(() => {
     const threeDaysForecast = calcThreeDaysForecast(cityToShow.forecast.list);
-    console.log(threeDaysForecast);
     setDataFromCity(threeDaysForecast);
-    // setDataFromCity(
-    //   cityToShow.forecast.list.slice(0, 3).map((item) => ({
-    //     icon: item.weather[0].icon,
-    //     min: item.main.temp_min,
-    //     max: item.main.temp_max,
-    //     description: item.weather[0].main,
-    //   }))
-    // );
   }, [cityToShow]);
 
   return (
